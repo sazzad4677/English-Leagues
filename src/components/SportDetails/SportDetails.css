@@ -1,0 +1,35 @@
+.sports{
+    background-color: #0E0A2B;
+    overflow: hidden;
+}
+.sports-details{
+    background-color: #3A42FF ;
+    border: 1px #0E0A2B;
+    border-radius:20px;
+}
+.title{
+    font-family: 'Montserrat', sans-serif;
+    font-size:40px;
+    color: aliceblue;
+}
+.description{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    color: aliceblue;
+}
+.player-image img{
+    margin-top: 30px;
+    margin-left: 150px;
+    margin-bottom: 20px;
+    width: 484px;
+    height:204px;
+}
+.sports-description{
+    margin-top:5px;
+    padding: 20px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+    color: #A3A2A8;
+}
