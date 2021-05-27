@@ -1,0 +1,14 @@
+.navbar{
+    position: relative;
+}
+.navbar img {
+        width: 100%;
+}
+.team-name{
+        color: white;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 50px;
+}
