@@ -46,11 +46,11 @@
       width: 75%;
     }
   
-  a {
+  Link {
     text-decoration: none;
-    color: white;
+    color: rgb(134, 21, 21);
   }
   
-  a:hover {
+  Link:hover {
     text-decoration: underline;
   }

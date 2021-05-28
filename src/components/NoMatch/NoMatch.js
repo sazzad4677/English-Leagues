@@ -1,6 +1,7 @@
 import React from "react";
 import './NoMatch.css';
 import Header from "../Header/Header";
+import {Link} from "react-router-dom"
 
 const NoMatch = () => {
   return (
@@ -13,7 +14,7 @@ const NoMatch = () => {
           Maybe this page moved? Got deleted? Is hiding out in quarantine? Never
           existed in the first place?
           <p>
-            Let's go <a href="#">home</a> and try from there.
+            Let's go <Link to="/home">home</Link> and try from there.
           </p>
         </div>
       </div>
