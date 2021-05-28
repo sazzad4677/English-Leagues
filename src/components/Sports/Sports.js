@@ -5,7 +5,7 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import {Link} from 'react-router-dom'
 import './Sports.css';
 
-const Sports = (props) => {
+const Sports = () => {
   const [leagues , setLeagues] = useState([]);
 
   useEffect(() => {
