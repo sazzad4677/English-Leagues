@@ -7,7 +7,7 @@ import './Sports.css';
 
 const Sports = () => {
   const [leagues , setLeagues] = useState([]);
-
+  // load data from the API and set it in useState
   useEffect(() => {
     fetch("https://www.thesportsdb.com/api/v1/json/1/search_all_leagues.php?c=England")
       .then((response) => response.json())

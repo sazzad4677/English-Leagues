@@ -19,6 +19,8 @@
     color: aliceblue;
 }
 .player-image img{
+    border: #3A42FF ;
+    border-radius: 8px;
     margin-top: 30px;
     margin-left: 150px;
     margin-bottom: 20px;
