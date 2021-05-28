@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Container } from "react-bootstrap";
 import { useParams } from "react-router";
 import Header from "../Header/Header";
-import Home from "../Home/Home";
 import femaleImages from "../../images/Photo/female.png";
 import maleImages from "../../images/Photo/male.png";
 import "./SportDetails.css";
@@ -13,55 +12,76 @@ import {
   faFutbol,
   faMarsStroke,
 } from "@fortawesome/free-solid-svg-icons";
+import { faFacebook, faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const SportDetails = () => {
   const { id } = useParams();
-  // console.log(useParams);.
   const [leagues, setLeagues] = useState([]);
   useEffect(() => {
     fetch(`https://www.thesportsdb.com/api/v1/json/1/lookupleague.php?id=${id}`)
       .then((response) => response.json())
       .then((data) => setLeagues(data.leagues[0]));
   }, []);
-  //   let gender = leagues.strGender;
-  //   let isMale = () => {
-  //       if (leagues.strGender = 'male') {
-  //           return true;
-  //       } else {
-  //           return false;
-  //       }
-  //   }
+  
+  const {
+    strLeague,
+    dateFirstEvent,
+    strCountry,
+    strSport,
+    strGender,
+    strDescriptionEN,
+    strBanner,
+    strTwitter,
+    strFacebook,
+    strYoutube
+  } = leagues;
+  const images = () => {
+    if (strGender === "Male") {
+      return <img src={maleImages} alt="" />;
+    } else {
+      return <img src={femaleImages} alt="" />;
+    }
+  };
+  
   return (
     <div className="sports">
-      <Header leagues={leagues}></Header>
+      <Header strBanner={strBanner}></Header>
       <Container className="sports-details ">
         <div className="d-flex">
           <div>
-            <h1 className="title">{leagues.strLeague}</h1>
+            <h1 className="title">{strLeague}</h1>
             <p className="description">
-              {" "}
-              <FontAwesomeIcon icon={faSearch} /> Founded: {leagues.dateFirstEvent}
+              <FontAwesomeIcon icon={faSearch} /> Founded: {dateFirstEvent}
             </p>
             <p className="description">
-              <FontAwesomeIcon icon={faFlag} /> Country: {leagues.strCountry}
+              <FontAwesomeIcon icon={faFlag} /> Country: {strCountry}
             </p>
             <p className="description">
-              <FontAwesomeIcon icon={faFutbol} /> Sports Type: {leagues.strSport}
+              <FontAwesomeIcon icon={faFutbol} /> Sports Type: {strSport}
             </p>
             <p className="description">
-              <FontAwesomeIcon icon={faMarsStroke} /> Gender: {leagues.strGender}
+              <FontAwesomeIcon icon={faMarsStroke} /> Gender: {strGender}
             </p>
           </div>
-          <div className="player-image">
-            <img src={maleImages} alt="" />
-          </div>
+          <div className="player-image">{images()}</div>
         </div>
       </Container>
       <Container>
         <div className="sports-description">
-          <p>{leagues.strDescriptionEN}</p>
+          <p>{strDescriptionEN}</p>
         </div>
       </Container>
+      <div className="d-flex justify-content-center">
+        <a href={strFacebook} target="_blank" className="social-icons">
+          <FontAwesomeIcon icon={faFacebook} size="2x" />
+        </a>
+        <a href={strTwitter} className="social-icons">
+          <FontAwesomeIcon icon={faTwitter} size="2x" />
+        </a>
+        <a href={strYoutube} className="social-icons" >
+          <FontAwesomeIcon icon={faYoutube} size="2x" />
+        </a>
+      </div>
     </div>
   );
 };

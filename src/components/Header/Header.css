@@ -1,14 +1,23 @@
 .navbar {
   position: relative;
 }
-.navbar img {
+.navbar-background {
   width: 100%;
+  opacity: 0.5;
 }
-.team-name {
+.site-title{
+  color: #ffffff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 80px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.team-image {
   color: rgb(68, 63, 63);
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 50px;
 }

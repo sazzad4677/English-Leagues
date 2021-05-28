@@ -5,13 +5,15 @@ import image from "../../images/header-stadium.jpg";
 import { Link } from "react-router-dom";
 
 const Header = (props) => {
-  const {leagues} = props;
+  const {strBanner} = props;
   return (
     <Navbar className="navbar">
-      <img src={image} alt="" width="1000" height="300" />
+      <img className="navbar-background" src={image} alt="" width="1000" height="300" />
       <Link to={"/home"}>
-        <div className="team-name"><img src={leagues.strBanner || "Sports Mania"} width="1000" height="200"  alt="" /></div>
+        <div> <h3 className="site-title">Sports Mania</h3> </div>
+        <div className="team-image"> <img src={strBanner} width="1000" height="200"  alt="" /> </div>
       </Link>
+
     </Navbar>
   );
 };

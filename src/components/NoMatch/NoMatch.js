@@ -5,7 +5,6 @@ import Header from "../Header/Header";
 const NoMatch = () => {
   return (
     <div className="no-match">
-      <Header></Header>
       <div className="mainbox">
         <div className="err">4</div>
         <i className="far fa-question-circle fa-spin"></i>
