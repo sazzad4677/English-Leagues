@@ -25,7 +25,7 @@ const SportDetails = () => {
   if (leagues.length === 0 || leagues === "I" || leagues === null) noData = { display: 'block', color: 'red' };
   else noData = { display: 'none' };
 
-  //object destructuring
+  //destructuring
   const {strLeague,dateFirstEvent,strCountry,strSport,strGender,strDescriptionEN,strBanner,strTwitter,strFacebook,strYoutube} = leagues;
 
   //condition for image in the details box
